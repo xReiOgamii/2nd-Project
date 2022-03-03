@@ -18,6 +18,7 @@ html {
 }
 body {
     font-family: "Open Sans", sans-serif;
+    background-color: silver;
 }
 ul {
     list-style: none;
@@ -49,6 +50,7 @@ ul {
 a {
     text-decoration: none;
 }
+/* Staring Header */
 header {
     padding: 20px;
 }
@@ -65,109 +67,88 @@ header .container::before {
     width: calc(100% - 25px);
     bottom: -20px;
     left: 15px;
-    z-index: 1;
+    z-index: 100;
 }
 header img {
     height: 40px;
 }
-header nav {
-    display: flex;
-}
 header nav ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
-header nav ul li {
-    margin-right: 25px;
-    font-size: 20px;
-    font-weight: bold;
-    z-index: 1000;
+header nav ul li:not(:first-child) {
+    padding-left: 25px;
 }
-header nav ul li a {
-    color: white;
-}
-header nav ul li .active {
-    border-bottom: 1px solid #19c8fa;
-    padding-bottom: 27px;
-    z-index: 1000;
-    color: #19c8fa;
-}
-header nav ul li:hover a {
-    border-bottom: 1px solid #19c8fa;
-    padding-bottom: 27px;
-    z-index: 1000;
-    color: #19c8fa;
-}
-header .icon {
-    border-left: 1px solid white;
-    font-size: 25px;
-}
-header .icon i {
-    padding-left: 15px;
-    font-size: 25px;
-    color: #eee;
-}
-header .fa-list-ul {
+.fa-solid {
     display: none;
 }
+header nav ul .active {
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 28px;
+    z-index: 1000px;
+}
+header li:hover a {
+    border-bottom:  solid var(--main-color);
+    padding-bottom: 28px;
+    color: var(--main-color);
+}
+header nav ul a {
+    color: #eee;
+}
 @media (max-width: 767px) {
-    header {
-        position: relative;
-    }
+    .fa-solid {
+    display: block;
+}
     header nav {
-        padding-top: 0;
-        margin-top: 0;
+        display: flex;
+    }
+    header nav .fa-list-ul {
+        margin-right: 20px;
+        padding-right: 20px;
+        border-right: 3px solid #eee;
+    }
+    header nav i {
+        color: #eee;
     }
     header nav ul {
-        padding-top: 0;
-        margin-top: 0;
         position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        height: 300px;
-        left: 0;
-        background-color: #19c8fa;
-        bottom: -322px;
-        text-align: left;
+        top: 65px;
+        width: 115%;
+        left: -20px;
+        background-color:rgb(0 0 0 / 25%);
+        display: none;
+    }
+    header nav ul li:first-of-type {
+        border-bottom: 2px solid var(--main-color);
+    }
+    header nav ul a {
+        color: #eee;
+    }
+    header nav:hover ul {
+        display: block;
+    }
+    header nav ul .active {
+        border-bottom: 3px solid transparent;
+        padding-left: 10px;
     }
     header nav ul li {
+        padding: 15px;
         width: 100%;
-        padding-left: 20px;
+        font-weight: bold;
     }
-    header nav ul:hover li {
-        border-bottom: 1px solid black;
-    }
-    header nav ul li  {
-        
-    }
-    header nav ul li .active {
-        padding-bottom: 27px;
-        z-index: 1000;
-        color: #EEE;
-    }
-    /* header .fa-list-ul {
-        display: block;
-        color: #eee;
-        font-size: 25px;
-        padding-right: 25px;
-    } */
 }
-/* start landing */
+ /* start landing */
 .landing {
     position: relative;
     background-image: url(../images/landing.jpg);
     top: -115px;
     height: 110vh;
-    z-index: -1;
+    z-index: -100;
 }
 .land-body {
     height: 110vh;
-    background-color:rgb(0 0 0 / 60%);;
-    z-index: -1;
+    background-color:rgb(0 0 0 / 60%);
+    z-index: -200;
 }
 .land-text {
     position: absolute;
@@ -185,17 +166,19 @@ header .fa-list-ul {
     font-size: 25px;
     color: #fff;
     top: 50%;
-    z-index: 1000;
+    z-index: 800000;
     font-weight: bold;
 }
 .landing .fa-angle-right {
     right: 25px;
+    z-index: 100000;
 }
 .landing .fa-angle-left {
     left: 25px;
+    z-index: 10000000;
 }
 .bullets {
-    z-index: 10000;
+    z-index: 100000000;
     display: flex;
     flex-direction: row;
     font-size: 25px;
